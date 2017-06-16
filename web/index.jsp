@@ -4,6 +4,7 @@
     Author     : Mauricio
 --%>
 
+<%@page import="cl.accesodato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <%@page import="java.sql.*" %>
 <!DOCTYPE html>
@@ -14,18 +15,7 @@
     </head>
     <body>
         <% 
-            Connection con=null; 
-            String driver="com.mysql.jdbc.Driver"; 
-            String url="jdbc:mysql://localhost:3306/inacap"; 
-            String usuario="root"; 
-            String clave=""; 
-            try{ 
-                Class.forName(driver); 
-                con=DriverManager.getConnection(url,usuario,clave); 
-                out.println("Usuario Conectado"); 
-            }catch(Exception ex){ 
-                out.println("Error de Conexion"+ex.getMessage());
-            }
+          Conexion con=new Conexion();
             
             %>
     </body>
